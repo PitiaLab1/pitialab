@@ -9,7 +9,7 @@
 <body>
 	<header id="header">
 		<img src="img/icon.png" alt="">
-		<h1> Caça palavras </h1>
+		<h1>Caça palavras</h1>
 	</header>
 	<div>
 		<form id="search" data-js="form">
@@ -31,18 +31,9 @@
 			<tr data-js="line9"></tr>
 		</tbody>
 	</table>
-	
-	<p data-js="message" style="display: none;">Parabéns! Você encontrou todas as palavras! <button data-js="play-again">Começar novo jogo</button></p>
-	<style>
-		.hidden {
-			display: none;
-		}
 
-		.color {
-			background-color: #00ff55;
-			transition: background 0.5s ease-out;
-		}
-	</style>
+	<div data-js="message" class="hidden">Parabéns! Você concluiu o caça-palavras.</div>
+	<button id="new-game-button" data-js="new-game-button" class="hidden">Novo Jogo</button>
 
 	<script src="js/main.js"></script>
 </body>

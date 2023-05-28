@@ -1,11 +1,22 @@
 @import url('https://fonts.cdnfonts.com/css/azonix');
+
 * {
 	margin: 0;
 	padding: 0;
 	font-family: var(--font-body);
 }
-:root{
-	--font-body:'Azonix';
+
+:root {
+	--font-body: 'Azonix';
+}
+
+.hidden {
+	display: none;
+}
+
+.color {
+	background-color: #00ff55;
+	transition: background 0.5s ease-out;
 }
 
 body {
@@ -62,7 +73,6 @@ body {
 	height: 50px;
 	border: none;
 	color: #FFF;
-	
 	cursor: pointer;
 	font-family: 'RobotoSlab';
 	font-style: normal;
@@ -81,11 +91,9 @@ body {
 	border-radius: 10px;
 	border-spacing: 0;
 	font-family: var(--font-body);
-	
 }
 
 #table td {
-	border: 1.5px solid #000000;
 	border: 1.5px solid #000000;
 	width: 46px;
 	text-align: center;
@@ -155,18 +163,4 @@ body {
 		width: 33px;
 		font-size: 20px;
 	}
-}
-
-/*@font-face {
-	font-family: 'Roboto';
-	src: url('fonts/RobotoMono-Regular.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}/*
-
-/*@font-face {
-	font-family: 'RobotoSlab';
-	src: url('fonts/RobotoSlab-Regular.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;/*
 }
