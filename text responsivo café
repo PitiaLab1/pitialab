@@ -1,0 +1,115 @@
+========== CABEÇALHO ==========
+.nav__logo
+café
+
+.nav__link
+Lar
+
+Sobre
+
+Passos
+
+Depoimento
+
+
+========== CASA ==========
+.home__subtitle
+QUALIDADE EXCEPCIONAL
+
+.home__title
+É hora de um <br>
+Café bom
+
+.home__description
+Cada grão de café selecionado reflete nosso compromisso 
+aos cafeicultores peruanos, que trazem o melhor café para sua mesa.
+
+.botão
+Iniciar
+
+
+========== PRODUTOS ==========
+.products__button
+Rolar para baixo
+
+.produtos__descrição
+Nós nos esforçamos para formar parcerias profundas com os agricultores 
+de todo o mundo para criar perspectivas 
+juntos e formar relações de trabalho saudáveis 
+construídas sobre confiança e respeito.
+
+.products__name .products__price
+Café Clássico
+$ 17,90
+
+Café preto
+$ 24,90
+
+Café forte
+$ 32,90
+
+
+========== SOBRE ==========
+.Título da seção
+Nossa história
+
+.sobre__descrição
+Fazemos e cultivamos o melhor café do Peru, acompanhando 
+famílias desde 1930, com trabalhadores profissionais que 
+colhem e selecionam o café com qualidade e
+trabalho, proporcionando assim um café requintado para desfrutar juntos 
+como uma família.
+
+
+========== PASSOS ==========
+.Título da seção
+Etapas de fabricação de nossos produtos
+
+.steps__circle .steps__description
+01
+A colheita ocorre anualmente quando os grão de café atingem a maturidade e são colhidos 
+para processamento.
+
+02
+Os grãos são secos usando uma técinha de drenagem ou hidratação, dependendo do gosto que queremos 
+obter.
+
+03
+O café é torrado e adquire 
+seu sabor ao processar o grão 
+em fornos.
+
+
+========== DEPOIMENTO ==========
+.Título da seção
+O café é a melhor bebida da
+manhã, mantém você focado.
+
+.testimonial__name
+Jhon Doe
+
+
+========== RODAPÉ ==========
+.footer__logotipo
+café
+
+.footer__title
+Assine a nossa newsletter
+
+.footer__input - espaço reservado
+Insira o endereço de e-mail
+
+.footer__button
+Se inscrever
+
+.rodapé__descrição
+Nós nos preocupamos com seus dados. Leia nosso 
+política de Privacidade
+
+.footer__social-link
+https://www.facebook.com/
+https://www.instagram.com/
+https://twitter.com/
+
+.footer__copy
+© Direitos autorais Bedimcode. Todos os direitos reservados
