@@ -181,16 +181,15 @@ color: #D1FE41;
   }
   
   
-  @media (min-width: 450px) and (max-width: 1023px) {
+  @media (min-width: 400px) and (max-width: 1023px) {
     .nav__menu {
       flex-wrap: wrap;
       justify-content: space-around;
-      transform: translateX(-.8%);
+      transform: translateX(-1.1%);
       margin: 0;
     }
    .nav__menu span{
     font-size: 16px;
-    margin-left: 20px;
 
    }
   }
@@ -794,6 +793,7 @@ opacity: .15;
     align-items: center;
     font-size: 13px;
     transform: translateX(15%);
+    margin-left: 9px;
     
   }
   .nav__menu{
@@ -1232,7 +1232,7 @@ width: 120px;
   background-color: #92b326;
   color: white;
   text-transform: uppercase;
-  padding: 10 px;
+  padding: 10px;
   border: none; 
   border-radius: 50px;
   font-family: 'Azonix';
