@@ -181,7 +181,7 @@ color: #D1FE41;
   }
   
   
-  @media (min-width: 400px) and (max-width: 1023px) {
+  @media (min-width: 500px) and (max-width: 1023px) {
     .nav__menu {
       flex-wrap: wrap;
       justify-content: space-around;
@@ -190,6 +190,7 @@ color: #D1FE41;
     }
    .nav__menu span{
     font-size: 16px;
+    margin-left: 15px;
 
    }
   }
@@ -778,7 +779,7 @@ opacity: .15;
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-@media screen and (min-width:300px) and (max-width: 500px){
+@media screen and (min-width:260px) and (max-width: 500px){
   .container{
     margin-inline: 1rem;
   }
@@ -799,13 +800,13 @@ opacity: .15;
   .nav__menu{
   padding-inline: 1rem;
   justify-content: center;
-  transform: translateX(-1.2%);
+  transform: translateX(-1.5%);
   margin: 0;
   }
   .home__title{
     width: 220px;
     text-align: center;
-    transform: translateX(-14%);
+    transform: translateX(-15%);
   }
   .home__title img{
     bottom:2.5rem;
