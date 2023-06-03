@@ -775,17 +775,20 @@ opacity: .15;
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-@media screen and (min-width:300px) and (max-width: 420px){
+@media screen and (min-width:300px) and (max-width: 500px){
   .container{
     margin-inline: 1rem;
   }
+ 
+.section__title{
+  font-family: 'Azonix';
+  font-size: 38px;
+}
   
   .nav__menu span{
     align-items: center;
     font-size: 13px;
-    margin-right: 20px;
-    justify-content: center;
-    transform: translateX(20%);
+    transform: translateX(15%);
     
   }
   .nav__menu{
