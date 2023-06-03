@@ -775,12 +775,19 @@ opacity: .15;
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-@media screen and (max-width:300px){
+@media screen and (min-width:300px) and (max-width: 420px){
   .container{
     margin-inline: 1rem;
   }
   
-  
+  .nav__menu span{
+    align-items: center;
+    font-size: 13px;
+    margin-right: 20px;
+    justify-content: center;
+    transform: translateX(20%);
+    
+  }
   .nav__menu{
   padding-inline: 1rem;
   justify-content: center;
