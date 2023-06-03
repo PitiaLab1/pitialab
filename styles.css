@@ -799,10 +799,13 @@ opacity: .15;
   .nav__menu{
   padding-inline: 1rem;
   justify-content: center;
+  transform: translateX(-1.2%);
+  margin: 0;
   }
   .home__title{
     width: 220px;
     text-align: center;
+    transform: translateX(-14%);
   }
   .home__title img{
     bottom:2.5rem;
