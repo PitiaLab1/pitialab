@@ -131,7 +131,7 @@ header ul li a {
     object-fit: contain; /* Ajuste a propriedade object-fit conforme desejado */
 }
 
-.starbucks{
+.starbucks {
     margin-left: 50%;
 }
 
@@ -202,19 +202,12 @@ a {
 
 /* Responsive Styles */
 
-
-@media screen and (max-width: 767px) and (min-width: 260px) {
-    .content {
-        position: relative;
-        width: 100%;
-        max-width: 1200px;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        margin-top: 100px; 
+@media screen and (max-width: 767px){
+    section {
+        padding: 50px;
+        overflow-x: hidden;
     }
-    
+
     header {
         padding: 10px;
     }
@@ -223,15 +216,8 @@ a {
         margin-left: 10px;
     }
 
-    .content {
-        flex-direction: column;
-        align-items: center;
-    }
-
     .content .textBox {
-        width: 100%;
-        max-width: 100%;
-        text-align: center;
+        margin-top: 100px;
     }
 
     .content .textBox h2 {
@@ -253,8 +239,10 @@ a {
     }
 
     .thumb li img {
-        max-width: 40px;
+        max-width: 60px;
+        margin-top: 100px; /* Adicione uma margem superior aqui */
     }
+    
 
     .sci {
         position: static;
@@ -275,16 +263,16 @@ a {
     }
 
     /* Novas regras para o intervalo de 260px a 767px */
-    .content .imgBox {
-        margin-top: 20px;
-    }
     
+    .content .imgBox {
+        margin-top: -100px;
+    }
+
     .starbucks {
         margin-left: 0;
-        margin-top: 20px;
+        margin-top: 30%;
     }
 }
-
 
 @media screen and (max-width: 768px) {
     section {
@@ -293,7 +281,7 @@ a {
     }
 
     header {
-        padding: 10px;
+        padding: 2px;
     }
 
     header ul li a {
@@ -303,12 +291,17 @@ a {
     .content {
         flex-direction: column;
         align-items: center;
+        transform: translateY(10%);
     }
 
     .content .textBox {
         width: 100%;
         max-width: 100%;
         text-align: center;
+        position: relative;
+        top: 0;
+        transform: translateY(0);
+        margin-top: 0;
     }
 
     .content .textBox h2 {
