@@ -200,7 +200,6 @@ a {
     text-decoration: none;
 }
 
-/* Responsive Styles */
 
 @media screen and (max-width: 767px){
     section {
@@ -240,7 +239,7 @@ a {
 
     .thumb li img {
         max-width: 60px;
-        margin-top: 100px; /* Adicione uma margem superior aqui */
+        margin-top: 100px; 
     }
     
 
@@ -261,8 +260,6 @@ a {
     .circle {
         display: none;
     }
-
-    /* Novas regras para o intervalo de 260px a 767px */
     
     .content .imgBox {
         margin-top: -100px;
