@@ -11,15 +11,16 @@
 
 section {
     position: relative;
-    padding: 100px;
+    padding: 100px 0; /* Adjusted padding to remove extra space at the bottom */
     display: flex;
     justify-content: center;
     align-items: center;
     background: #fff;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh; /* Changed height to min-height */
     width: 100%;
 }
+
 
 header {
     position: absolute;
@@ -201,7 +202,7 @@ a {
 }
 
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767px) and (min-width: 300px) {
     section {
         padding: 50px;
         overflow-x: hidden;
