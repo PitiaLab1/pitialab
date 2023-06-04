@@ -203,8 +203,9 @@ a {
 
 @media screen and (min-width: 300px) and (max-width: 500px) {
     section {
-        padding: 50px 0;
+        padding: 0px 0;
         overflow-x: hidden;
+        max-height: 1000px;
     }
 
     header ul li a {
@@ -227,7 +228,7 @@ a {
 
     .thumb {
         position: static;
-        margin-top: 20px;
+        transform: translateY(-60%);
     }
 
     .thumb li {
@@ -236,7 +237,6 @@ a {
 
     .thumb li img {
         max-width: 60px;
-        margin-top: 100px; 
     }
     
     .sci {
@@ -257,13 +257,12 @@ a {
         display: none;
     }
 
-    .content .imgBox {
-        margin-top: -75%;
-    }
+    
 
     .starbucks {
         margin-left: 0;
-        margin-top: 70%;
+        width: 250px;
+        transform: translateY(-15%);
     }
 }
 
