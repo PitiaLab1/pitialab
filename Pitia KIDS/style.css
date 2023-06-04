@@ -11,7 +11,7 @@
 
 section {
     position: relative;
-    padding: 100px 0; /* Adjusted padding to remove extra space at the bottom */
+    padding: 50px 0; /* Adjusted padding to remove extra space at the bottom */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,13 +21,12 @@ section {
     width: 100%;
 }
 
-
 header {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px;
+    padding: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -77,14 +76,14 @@ header ul li a {
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    margin-top: 50px;
+    margin-top: 30px; /* Adjusted margin-top to reduce spacing */
 }
 
 .content .textBox {
     position: relative;
     width: 100%;
     max-width: 600px;
-    margin-bottom: 50px;
+    margin-bottom: 30px; /* Adjusted margin-bottom to reduce spacing */
 }
 
 .content .textBox h2 {
@@ -122,7 +121,7 @@ header ul li a {
     max-width: 600px;
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 30px; /* Adjusted margin-top to reduce spacing */
     height: 500px; /* Defina uma altura adequada para a classe .imgBox */
 }
 
@@ -202,14 +201,10 @@ a {
 }
 
 
-@media screen and (max-width: 767px) and (min-width: 300px) {
+@media screen and (min-width: 300px) and (max-width: 500px) {
     section {
-        padding: 50px;
+        padding: 50px 0;
         overflow-x: hidden;
-    }
-
-    header {
-        padding: 10px;
     }
 
     header ul li a {
@@ -218,10 +213,11 @@ a {
 
     .content .textBox {
         margin-top: 100px;
+        text-align: center;
     }
 
     .content .textBox h2 {
-        font-size: 2.5em;
+        font-size: 2em;
         line-height: 1.2em;
     }
 
@@ -243,7 +239,6 @@ a {
         margin-top: 100px; 
     }
     
-
     .sci {
         position: static;
         transform: none;
@@ -261,7 +256,7 @@ a {
     .circle {
         display: none;
     }
-    
+
     .content .imgBox {
         margin-top: -75%;
     }
@@ -272,38 +267,23 @@ a {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 501px) and (max-width: 700px) {
     section {
-        padding: 50px;
+        padding: 50px 0;
         overflow-x: hidden;
-    }
-
-    header {
-        padding: 2px;
     }
 
     header ul li a {
         margin-left: 10px;
     }
 
-    .content {
-        flex-direction: column;
-        align-items: center;
-        transform: translateY(10%);
-    }
-
     .content .textBox {
-        width: 100%;
-        max-width: 100%;
+        margin-top: 100px;
         text-align: center;
-        position: relative;
-        top: 0;
-        transform: translateY(0);
-        margin-top: 0;
     }
 
     .content .textBox h2 {
-        font-size: 2.5em;
+        font-size: 2em;
         line-height: 1.2em;
     }
 
@@ -321,9 +301,10 @@ a {
     }
 
     .thumb li img {
-        max-width: 40px;
+        max-width: 60px;
+        margin-top: 100px; 
     }
-
+    
     .sci {
         position: static;
         transform: none;
@@ -340,5 +321,14 @@ a {
 
     .circle {
         display: none;
+    }
+
+    .content .imgBox {
+        margin-top: -75%;
+    }
+
+    .starbucks {
+        margin-left: 0;
+        margin-top: 70%;
     }
 }
