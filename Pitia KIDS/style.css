@@ -17,6 +17,8 @@ section {
     align-items: center;
     background: #fff;
     flex-direction: column;
+    height: 100vh;
+    width: 100%;
 }
 
 header {
@@ -122,6 +124,10 @@ header ul li a {
     margin-top: 50px;
 }
 
+.starbucks{
+    margin-left: 50%;
+}
+
 .content .imgBox img {
     max-width: 100%;
 }
@@ -188,6 +194,90 @@ a {
 }
 
 /* Responsive Styles */
+
+
+@media screen and (max-width: 767px) and (min-width: 260px) {
+    .content {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin-top: 100px; 
+    }
+    
+    header {
+        padding: 10px;
+    }
+
+    header ul li a {
+        margin-left: 10px;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content .textBox {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .content .textBox h2 {
+        font-size: 2.5em;
+        line-height: 1.2em;
+    }
+
+    .content .textBox h2 span {
+        font-size: 0.8em;
+    }
+
+    .thumb {
+        position: static;
+        margin-top: 20px;
+    }
+
+    .thumb li {
+        margin: 0 10px;
+    }
+
+    .thumb li img {
+        max-width: 40px;
+    }
+
+    .sci {
+        position: static;
+        transform: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        margin-top: 20px;
+    }
+
+    .sci li a {
+        margin: 0 5px;
+        transform: scale(0.4);
+    }
+
+    .circle {
+        display: none;
+    }
+
+    /* Novas regras para o intervalo de 260px a 767px */
+    .content .imgBox {
+        margin-top: 20px;
+    }
+    
+    .starbucks {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+
 
 @media screen and (max-width: 768px) {
     section {
