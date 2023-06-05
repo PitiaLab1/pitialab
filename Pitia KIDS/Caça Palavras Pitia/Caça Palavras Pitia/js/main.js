@@ -10,7 +10,7 @@
 	function getIndex(name) {
 		if (gameWords.indexOf(name) > -1) {
 			var i = gameWords.indexOf(name);
-			return indexes[i];
+			return indexes[i];	
 		}
 
 		$search.value = '';
@@ -64,7 +64,7 @@
 		}
 	}, false);
 
-	function selectTd(line, column) {
+function selectTd(line, column) {
 		var tr = $tbody.children[line];
 		var td = tr.children[column];
 		td.classList.add("color");
