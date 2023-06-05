@@ -120,47 +120,46 @@ body {
 	border-right: none
 }
 
-@media only screen and (max-width: 479px) {
-	#header {
-		width: 350px;
-		margin: 20px auto;
-		display: inline-block;
-	}
+@media only screen and (min-width: 360px){
+	
 
-	#header img {
-		width: 58px;
-		height: 58px;
-		padding-left: 38px;
-	}
 
 	#header h1 {
-		font-size: 30px;
-		padding-left: 20px;
-		padding-top: 13px;
+		font-size: 50px;
+		padding-top: 20px;
+		transform: translateX(3%);
+		margin: 0;
 	}
 
 	#search {
-		margin-bottom: 20px;
+		margin: 0;
+		transform: translateY(80%);
 	}
 
 	#search input {
-		width: 233px;
-		height: 40px;
+		width: 450px;
+		height: 50px;
 	}
 
 	#search button {
 		width: 85px;
-		height: 40px;
+		height: 50px;
 		margin-left: 5px;
 	}
 
 	#table {
-		width: 330px;
-		height: 330px;
+		width: 830px;
+		height: 830px;
+		transform: translateY(15%);
 	}
 
 	#table td {
 		width: 33px;
-		font-size: 20px;
+		font-size: 36px;
+		font-family: 'Roboto';
+	}
+	#table .color {
+		background-color: #00ff55;
+		transition: background 0.5s ease-out;
 	}
 }
