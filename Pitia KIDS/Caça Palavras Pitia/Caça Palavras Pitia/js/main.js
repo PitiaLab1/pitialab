@@ -79,11 +79,11 @@ function selectTd(line, column) {
 		});
 
 		if (allWordsFound) {
-			$message.style.display = 'block';
+			$message.style.display = 'block'; // Exibe a mensagem de parabéns
 			$newGameButton.style.display = 'block';
-			alert('Parabéns! Você concluiu o caça-palavras.');
+			alert('Parabéns! Você concluiu o caça-palavras.'); // Comentado, pois não é necessário exibir um alerta
+		  }
 		}
-	}
 
 	$newGameButton.addEventListener('click', function() {
 		restartGame();
