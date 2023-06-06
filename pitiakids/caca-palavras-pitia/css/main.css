@@ -1,226 +1,230 @@
 @import url('https://fonts.cdnfonts.com/css/azonix');
+
 * {
-margin: 0;
-padding: 0;
-font-family: "Azonix";
+  margin: 0;
+  padding: 0;
+  font-family: "Azonix";
 }
 
 .hidden {
-display: none;
+  display: none;
 }
 
 body {
-background-image: url("../img/fundo-para-jogo.png");
-background-repeat: no-repeat;
-background-size: cover;
-background-position: center top;
-height: 100vh;
-width: 100%;
+  background-image: url("../img/fundo-para-jogo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  height: 100vh;
+  width: 100%;
 }
 
 #header {
-width: 500px;
-margin: 42px auto;
+  width: 500px;
+  margin: 42px auto;
 }
 
 #header h1 {
-color: #e25c5c;
-font-weight: bold;
-font-size: 48px;
-letter-spacing: 2px;
-display: inline-block;
-margin-left: 10px;
-text-transform: uppercase;
+  color: #e25c5c;
+  font-weight: bold;
+  font-size: 48px;
+  letter-spacing: 2px;
+  display: inline-block;
+  margin-left: 10px;
+  text-transform: uppercase;
 }
 
 #search {
-height: 50px;
-text-align: center;
-margin-bottom: 50px;
-border-radius: 5px;
+  height: 50px;
+  text-align: center;
+  margin-bottom: 50px;
+  border-radius: 5px;
 }
 
 #search input {
-width: 500px;
-height: 60px;
-border-radius: 5px;
-border: 2px solid #417505;
-color: #e25c5c;
-font-size: 22px;
-font-family: "Roboto";
-font-weight: bold;
-text-align: center;
-text-transform: uppercase;
+  width: 500px;
+  height: 60px;
+  border-radius: 5px;
+  border: 2px solid #417505;
+  color: #e25c5c;
+  font-size: 22px;
+  font-family: "Roboto";
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 #search button {
-background: linear-gradient(180deg, #d1fe41 -50%, #417505 100%);
-border-radius: 5px;
-width: 88px;
-height: 60px;
-border: none;
-color: #fff;
-cursor: pointer;
-font-family: "RobotoSlab";
-font-style: normal;
-font-weight: bold;
-line-height: normal;
-font-size: 15px;
-text-transform: uppercase;
-margin-left: 10px;
+  background: linear-gradient(180deg, #d1fe41 -50%, #417505 100%);
+  border-radius: 5px;
+  width: 88px;
+  height: 60px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: "RobotoSlab";
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  font-size: 15px;
+  text-transform: uppercase;
+  margin-left: 10px;
 }
 
 #table {
-width: 610px;
-height: 550px;
-margin: auto;
-border: 1.5px solid #000000;
-border-radius: 10px;
-border-spacing: 0;
+  width: 610px;
+  height: 550px;
+  margin: auto;
+  border: 1.5px solid #000000;
+  border-radius: 10px;
+  border-spacing: 0;
 }
 
 #table td {
-border: 1.5px solid #000000;
-width: 46px;
-text-align: center;
-text-transform: uppercase;
-font-family: "Roboto";
-font-style: normal;
-font-weight: normal;
-line-height: 36px;
-font-size: 36px;
-letter-spacing: 2.9px;
-background-color: #d1fe41;
+  border: 1.5px solid #000000;
+  width: 46px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 36px;
+  font-size: 36px;
+  letter-spacing: 2.9px;
+  background-color: #d1fe41;
 }
 
 #table .color {
-background-color: #00ff55;
-transition: background 0.5s ease-out;
+  background-color: #00ff55;
+  transition: background 0.5s ease-out;
 }
 
 #table tr:nth-child(10) td {
-border-bottom: none;
+  border-bottom: none;
 }
 
 #table td:last-child {
-border-right: none;
+  border-right: none;
 }
 
 #popup {
-width: 100%;
-height: 100vh;
-position: absolute;
-background: rgba(0, 0, 0, 0.4);
-/* display: flex; */
-justify-content: center;
-align-items: center;
-top: 0;
-left: 0;
-display: none;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  display: none;
 }
+
 #popup.active {
-display: flex;
+  display: flex;
 }
 
 .popup-box {
-background-color: #fff;
-padding: 32px;
+  background-color: #fff;
+  padding: 32px;
 }
+
 .popup-box p {
-margin-bottom: 16px;
+  margin-bottom: 16px;
 }
 
 .popup-box button {
-width: 100%;
-height: 42px;
-background-color: #00ff55;
-}
-
-.popup-box h1 {
-margin-bottom: 16px;
-}
-
-
-
-@media (max-width: 768px) {
-
-#header {
   width: 100%;
-  margin: 40px 0;
-  text-align: center;
-}
-
-#search input {
-  width: 450px;
-  height: 50px;
-}
-
-#search button {
-  width: 13%;
-}
-
-#table {
-  width: 540px;
-  height: auto;
-  max-width: 700px;
-}
-#table td .color {
-background-color: #00ff55;
-}
-#table td {
-  border: 1.5px solid #000000;
-  width: 46px;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: normal;
-  line-height: 36px;
-  font-size: 32px;
-  letter-spacing: 2.9px;
-  background-color: #d1fe41;
-  }
-}
-@media (min-width: 320px) and (max-width: 425px) {
-#header {
-  width: 100%;
-  margin: 30px 0;
-  text-align: center;
-  
-}
-#header h1{
-  font-size: 36px;
-}
-
-#search input {
-  width: 70%;
-}
-
-#search button {
-  width: 20%;
-}
-
-#table {
-  width: 95%;
-  height: auto;
-  max-width: none;
-}
-
-#table td .color {
+  height: 42px;
   background-color: #00ff55;
 }
 
-#table td {
-  border: 1.5px solid #000000;
-  width: 46px;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: normal;
-  line-height: 36px;
-  font-size: 28px;
-  letter-spacing: 2.9px;
-  background-color: #d1fe41;  
+.popup-box h1 {
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  #header {
+    width: 100%;
+    margin: 40px 0;
+    text-align: center;
+  }
+
+  #search input {
+    width: 450px;
+    height: 50px;
+  }
+
+  #search button {
+    width: 13%;
+  }
+
+  #table {
+    width: 540px;
+    height: auto;
+    max-width: 700px;
+  }
+
+  #table td .color {
+    background-color: #00ff55 !important;
+  }
+
+  #table td {
+    border: 1.5px solid #000000;
+    width: 46px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: normal;
+    line-height: 36px;
+    font-size: 32px;
+    letter-spacing: 2.9px;
+    background-color: #d1fe41;
+  }
+}
+
+
+@media (min-width: 320px) {
+  #header {
+    width: 100%;
+    margin: 30px 0;
+    text-align: center;
+  }
+
+  #header h1 {
+    font-size: 36px;
+  }
+
+  #search input {
+    width: 70%;
+  }
+
+  #search button {
+    width: 20%;
+  }
+
+  #table {
+    width: 95%;
+    height: auto;
+    max-width: none;
+  }
+
+  #table td .color {
+    background-color: #00ff55;
+  }
+
+  #table td {
+    border: 1.5px solid #000000;
+    width: 46px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: normal;
+    line-height: 36px;
+    font-size: 28px;
+    letter-spacing: 2.9px;
+    background-color: #393937;
   }
 }
