@@ -164,7 +164,7 @@ margin-bottom: 16px;
   height: auto;
   max-width: 700px;
 }
-#table .color {
+#table td .color {
 background-color: #00ff55;
 }
 #table td {
@@ -206,7 +206,7 @@ background-color: #00ff55;
   max-width: none;
 }
 
-#table .color {
+#table td .color {
   background-color: #00ff55;
 }
 
