@@ -136,19 +136,18 @@ document.addEventListener("DOMContentLoaded", () => {
     var tr = $tbody.children[line];
     var td = tr.children[column];
     td.classList.add("color");
+    td.style.backgroundColor = "#00ff55";
     $search.value = "";
-
-    var foundWords = Array.from($tbody.querySelectorAll(".color")).map(
-      function (td) {
-        return td.innerText;
-      }
-    );
-
+  
+    var foundWords = Array.from($tbody.querySelectorAll(".color")).map(function (td) {
+      return td.innerText;
+    });
+  
     var allWordsFound = gameWords.every(function (word) {
       return foundWords.includes(word);
     });
-
   }
+  
 
   function restartGame() {
     Array.from($tbody.querySelectorAll("td")).forEach(function (td) {
