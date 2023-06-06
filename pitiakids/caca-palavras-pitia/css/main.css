@@ -167,6 +167,19 @@ margin-bottom: 16px;
 #table .color {
 background-color: #00ff55;
 }
+#table td {
+  border: 1.5px solid #000000;
+  width: 46px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 36px;
+  font-size: 32px;
+  letter-spacing: 2.9px;
+  background-color: #d1fe41;
+  }
 }
 @media (min-width: 320px) and (max-width: 425px) {
 #header {
@@ -196,4 +209,18 @@ background-color: #00ff55;
 #table .color {
   background-color: #00ff55;
 }
+
+#table td {
+  border: 1.5px solid #000000;
+  width: 46px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 36px;
+  font-size: 28px;
+  letter-spacing: 2.9px;
+  background-color: #d1fe41;
+  }
 }
