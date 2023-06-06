@@ -850,6 +850,9 @@ opacity: .15;
     grid-template-columns: 325px;
     justify-content: center;
   }
+  .nav__menu span{
+    font-size: 18px;;
+  }
 }
 
 /* For medium devices */
@@ -857,7 +860,7 @@ opacity: .15;
   .home__img-bg {
     width: 340px;
   }
-
+  
   .featured__container {
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
@@ -875,12 +878,9 @@ opacity: .15;
   .footer__copy{
     display: none;
   }
-  .footer__social-redes{
-    display: table-column;
-    margin-top: 100px;
-    margin-right:   00px;
-    width: 0;
-  }
+
+  
+
 }
 
 @media screen and (min-width: 767px) {
@@ -899,6 +899,7 @@ opacity: .15;
     justify-content: initial;
     column-gap: 3rem;
   }
+  
   .nav__toggle, 
   .nav__close {
     display: none;
