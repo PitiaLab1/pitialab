@@ -128,6 +128,11 @@ body {
     height: auto;
     max-width: 500px;
   }
+
+  #table .color {
+	background-color: #00ff55;
+	transition: background 0.5s ease-out;
+  }
 }
 
 #popup {
