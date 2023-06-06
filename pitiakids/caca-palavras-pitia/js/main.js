@@ -1,26 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
   "use strict";
 
-  var $form = document.querySelector('[data-js="form"]');
-  var $search = document.querySelector('[data-js="search"]');
-  var $tbody = document.querySelector('[data-js="tbody"]');
-  var $message = document.querySelector('[data-js="message"]');
-  var $newGameButton = document.querySelector('[data-js="new-game-button"]');
+  const $form = document.querySelector('[data-js="form"]');
+  const $search = document.querySelector('[data-js="search"]');
+  const $tbody = document.querySelector('[data-js="tbody"]');
+  const $message = document.querySelector('[data-js="message"]');
+  const $newGameButton = document.querySelector('[data-js="new-game-button"]');
 
   let counter = 0;
 
-  function getIndex(name) {
-    if (gameWords.indexOf(name) > -1) {
-      var i = gameWords.indexOf(name);
-      return indexes[i];
-    }
+  const gameWords = [
+    "pitia",
+    "casarao",
+    "araripe",
+    "cultura",
+    "historia",
+    "museu",
+  ];
 
-    $search.value = "";
-
-    return false;
-  }
-
-  var letters = [
+  const letters = [
     ["w", "s", "p", "i", "t", "i", "a", "o", "i", "v"],
     ["v", "a", "l", "p", "a", "m", "u", "s", "e", "u"],
     ["u", "t", "a", "g", "b", "a", "n", "a", "o", "i"],
@@ -33,19 +31,17 @@ document.addEventListener("DOMContentLoaded", () => {
     ["f", "p", "e", "q", "t", "a", "m", "l", "o", "j"],
   ];
 
-  var lines = [];
-
-  letters.map(function (item, index) {
-    lines[index] = document.querySelector('[data-js="line' + index + '"]');
+  const lines = letters.map(function (item, index) {
+    return document.querySelector(`[data-js="line${index}"]`);
   });
 
   letters.forEach(function (item, index) {
     letters[index].forEach(function (item) {
-      lines[index].insertAdjacentHTML("beforeend", "<td>" + item + "</td>");
+      lines[index].insertAdjacentHTML("beforeend", `<td>${item}</td>`);
     });
   });
 
-  var indexes = [
+  const indexes = [
     [
       [0, 2],
       [0, 3],
@@ -99,55 +95,54 @@ document.addEventListener("DOMContentLoaded", () => {
     ],
   ];
 
-  var gameWords = [
-    "pitia",
-    "casarao",
-    "araripe",
-    "cultura",
-    "historia",
-    "museu",
-  ];
+  function getIndex(name) {
+    if (gameWords.indexOf(name) > -1) {
+      const i = gameWords.indexOf(name);
+      return indexes[i];
+    }
 
-  $form.addEventListener(
-    "submit",
-    function (event) {
-      event.preventDefault();
-      var valueSearch = $search.value;
-      var getIndexes = getIndex(valueSearch);
-      if (getIndexes) {
-        for (var i = 0; i < getIndexes.length; i++) {
-          selectTd(getIndexes[i][0], getIndexes[i][1]);
-        }
-        counter++;
-        console.log(counter);
+    $search.value = "";
 
-        if (counter == 6) {
-          document.getElementById("popup").classList.add("active");
-          document.getElementById("popup").addEventListener("click", () => {
-            document.getElementById("popup").classList.remove("active");
-          });
-        }
+    return false;
+  }
+
+  $form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const valueSearch = $search.value;
+    const getIndexes = getIndex(valueSearch);
+    if (getIndexes) {
+      for (let i = 0; i < getIndexes.length; i++) {
+        selectTd(getIndexes[i][0], getIndexes[i][1]);
       }
-    },
-    false
-  );
+      counter++;
+      console.log(counter);
+
+      if (counter == 6) {
+        document.getElementById("popup").classList.add("active");
+        document.getElementById("popup").addEventListener("click", () => {
+          document.getElementById("popup").classList.remove("active");
+        });
+      }
+    }
+  });
 
   function selectTd(line, column) {
-    var tr = $tbody.children[line];
-    var td = tr.children[column];
+    const tr = $tbody.children[line];
+    const td = tr.children[column];
     td.classList.add("color");
     td.style.backgroundColor = "#00ff55";
     $search.value = "";
-  
-    var foundWords = Array.from($tbody.querySelectorAll(".color")).map(function (td) {
-      return td.innerText;
-    });
-  
-    var allWordsFound = gameWords.every(function (word) {
+
+    const foundWords = Array.from($tbody.querySelectorAll(".color")).map(
+      function (td) {
+        return td.innerText;
+      }
+    );
+
+    const allWordsFound = gameWords.every(function (word) {
       return foundWords.includes(word);
     });
   }
-  
 
   function restartGame() {
     Array.from($tbody.querySelectorAll("td")).forEach(function (td) {
