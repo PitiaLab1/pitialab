@@ -868,6 +868,15 @@ opacity: .15;
   .footer__container {
     grid-template-columns: repeat(2, 1fr);
   }
+  .nav__menu{
+
+  }
+  .footer__copy{
+    display: none;
+  }
+  .footer__social-redes{
+    
+  }
 }
 
 @media screen and (min-width: 767px) {
