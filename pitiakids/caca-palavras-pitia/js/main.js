@@ -155,16 +155,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  $newGameButton.addEventListener(
-    "click",
-    function () {
-      restartGame();
-      $message.style.display = "none";
-      $newGameButton.style.display = "none";
-    },
-    false
-  );
-
   function restartGame() {
     Array.from($tbody.querySelectorAll("td")).forEach(function (td) {
       td.classList.remove("color");
