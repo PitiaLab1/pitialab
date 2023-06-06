@@ -432,7 +432,7 @@ border-radius: var(--border-section);
   letter-spacing: 1.5px;
 }
 .about__img{
-  width: 120px;
+  width: 150px;
   border-radius: 1rem;
   justify-self: center;
  
@@ -853,6 +853,8 @@ opacity: .15;
   .nav__menu span{
     font-size: 18px;;
   }
+ 
+  
 }
 
 /* For medium devices */
@@ -888,7 +890,8 @@ opacity: .15;
     padding: 8rem 0 1rem;
 
   }
-
+  
+  
   .cart {
     width: 420px;
     box-shadow: -2px 0 4px hsla(0, 0%, 15%, .1);
@@ -926,7 +929,7 @@ opacity: .15;
     transform: translate(1.5rem, -6rem);
   }
   .home__data {
-    padding: 0 0 3rem 6rem;
+    padding: 0 0 2rem 2rem;
   }
   .home__social {
     top: 47%;

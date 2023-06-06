@@ -107,8 +107,7 @@ body {
 #table td:last-child {
   border-right: none;
 }
-@media (max-width: 768px) {
-  /* Estilos para telas menores que 768px */
+@media (min-width: 768px) {
   #header {
     width: 100%;
     margin: 20px 0;

@@ -148,11 +148,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return foundWords.includes(word);
     });
 
-    if (allWordsFound) {
-      $message.style.display = "block"; // Exibe a mensagem de parabéns
-      $newGameButton.style.display = "block";
-      alert("Parabéns! Você concluiu o caça-palavras."); // Comentado, pois não é necessário exibir um alerta
-    }
   }
 
   function restartGame() {
