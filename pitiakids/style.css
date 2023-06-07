@@ -205,7 +205,7 @@ a {
     section {
         padding: 0px 0;
         overflow-x: hidden;
-        max-height: 1000px;
+        max-height: 100vh;
     }
 
     header ul li a {
@@ -213,7 +213,7 @@ a {
     }
 
     .content .textBox {
-        margin-top: 100px;
+        transform: translateY(160px);
         text-align: center;
     }
 
@@ -233,11 +233,13 @@ a {
 
     .thumb li {
         margin: 0 10px;
-        margin-bottom: 50px;
+        transform: translateY(220px);
     }
 
     .thumb li img {
         max-width: 60px;
+        transform: translateY(-240px);
+
     }
     
     .sci {
@@ -259,8 +261,8 @@ a {
     }
     .starbucks {
         margin-left: 0;
-        width: 250px;
-        margin-bottom: 120px;
+        width: 200px;
+        transform: translateY(1%);
     }
 }
 
@@ -296,7 +298,6 @@ a {
 
     .thumb li {
         margin: 0 10px;
-        margin-bottom: 50px;
     }
 
     .thumb li img {
@@ -323,7 +324,7 @@ a {
     .starbucks {
         margin-left: 0;
         width: 250px;
-        margin-bottom: 200px;
+        transform: translateY(-15%);
     }
 }
 
