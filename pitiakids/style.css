@@ -261,8 +261,9 @@ a {
     }
     .starbucks {
         margin-left: 0;
-        width: 200px;
-        transform: translateY(1%);
+        width: 300px;
+        height: 300px;
+        transform: translateY(50%);
     }
 }
 
