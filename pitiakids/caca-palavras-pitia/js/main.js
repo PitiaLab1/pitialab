@@ -98,6 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (gameWords.indexOf(name) > -1) {
       const i = gameWords.indexOf(name);
       return indexes[i];
+    
     }
 
     $search.value = "";
@@ -109,9 +110,11 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
     const valueSearch = $search.value;
     const getIndexes = getIndex(valueSearch);
+    alert(getIndexes)
     if (getIndexes) {
       for (let i = 0; i < getIndexes.length; i++) {
         selectTd(getIndexes[i][0], getIndexes[i][1]);
+
       }
       counter++;
       alert(counter)
