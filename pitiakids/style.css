@@ -233,6 +233,7 @@ a {
 
     .thumb li {
         margin: 0 10px;
+        margin-bottom: 50px;
     }
 
     .thumb li img {
@@ -256,20 +257,18 @@ a {
     .circle {
         display: none;
     }
-
-    
-
     .starbucks {
         margin-left: 0;
         width: 250px;
-        transform: translateY(-15%);
+        margin-bottom: 120px;
     }
 }
 
 @media screen and (min-width: 501px) and (max-width: 700px) {
     section {
-        padding: 50px 0;
+        padding: 0px 0;
         overflow-x: hidden;
+        max-height: 1000px;
     }
 
     header ul li a {
@@ -292,16 +291,16 @@ a {
 
     .thumb {
         position: static;
-        margin-top: 20px;
+        transform: translateY(-60%);
     }
 
     .thumb li {
         margin: 0 10px;
+        margin-bottom: 50px;
     }
 
     .thumb li img {
         max-width: 60px;
-        margin-top: 100px; 
     }
     
     .sci {
@@ -321,13 +320,10 @@ a {
     .circle {
         display: none;
     }
-
-    .content .imgBox {
-        margin-top: -75%;
-    }
-
     .starbucks {
         margin-left: 0;
-        margin-top: 70%;
+        width: 250px;
+        margin-bottom: 200px;
     }
 }
+
