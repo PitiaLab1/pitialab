@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  "use strict";
 
   const $form = document.querySelector('[data-js="form"]');
   const $search = document.querySelector('[data-js="search"]');
