@@ -114,8 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
         selectTd(getIndexes[i][0], getIndexes[i][1]);
       }
       counter++;
-      console.log(counter);
-
+      alert(counter)
       if (counter == 6) {
         document.getElementById("popup").classList.add("active");
         document.getElementById("popup").addEventListener("click", () => {
