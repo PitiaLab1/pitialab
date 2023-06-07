@@ -213,7 +213,7 @@ a {
     }
 
     .content .textBox {
-        transform: translateY(160px);
+        transform: translateY(135px);
         text-align: center;
     }
 
@@ -228,7 +228,7 @@ a {
 
     .thumb {
         position: static;
-        transform: translateY(-60%);
+        transform: translateY(-85%);
     }
 
     .thumb li{
@@ -263,7 +263,7 @@ a {
         margin-left: 0;
         width: 300px;
         height: 300px;
-        transform: translateY(50%);
+        transform: translateY(37%);
     }
 }
 
