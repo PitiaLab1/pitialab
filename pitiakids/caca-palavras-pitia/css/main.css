@@ -51,8 +51,11 @@ font-family: "Roboto";
 font-weight: bold;
 text-align: center;
 text-transform: uppercase;
-}
 
+}
+#search input:focus{
+  border: none;
+}
 #search button {
 background: linear-gradient(180deg, #d1fe41 -50%, #417505 100%);
 border-radius: 5px;
@@ -189,18 +192,25 @@ background-color: #00ff55;
   width: 100%;
   margin: 30px 0;
   text-align: center;
-  
 }
+#search input:focus{
+  border: 2px solid #d1fe41;
+
+}
+
 #header h1{
-  font-size: 36px;
+  font-size: 34px;
 }
 
 #search input {
   width: 70%;
+  height: 50px;
+  border: none;
 }
 
 #search button {
   width: 20%;
+  height: 50px;
 }
 
 #table {
@@ -211,6 +221,7 @@ background-color: #00ff55;
 
 #table .color {
   background-color: #00ff55;
+  
 }
 
 #table td {
@@ -222,7 +233,7 @@ background-color: #00ff55;
   font-style: normal;
   font-weight: normal;
   line-height: 36px;
-  font-size: 28px;
+  font-size: 25px;
   letter-spacing: 2.9px;
   background-color: #d1fe41;  
   }

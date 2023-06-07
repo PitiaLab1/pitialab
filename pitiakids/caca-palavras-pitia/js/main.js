@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(`[data-js="line${index}"]`)
   );
 
+  // Preenche a tabela com as letras
   letters.forEach(function (item, index) {
     letters[index].forEach(function (item) {
       lines[index].insertAdjacentHTML("beforeend", `<td>${item}</td>`);
@@ -92,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ],
   ];
 
+  // Obtém os índices correspondentes à palavra pesquisada
   function getIndex(name) {
     const index = gameWords.indexOf(name);
     if (index > -1) {
@@ -102,6 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return false;
   }
 
+  // Seleciona a célula na tabela
   function selectTd(line, column) {
     const tr = $tbody.children[line];
     const td = tr.children[column];
@@ -109,10 +112,12 @@ document.addEventListener("DOMContentLoaded", () => {
     td.style.backgroundColor = "#00ff55";
     $search.value = "";
 
+    // Obtém as palavras encontradas até o momento
     const foundWords = Array.from($tbody.querySelectorAll(".color")).map(
       (td) => td.innerText
     );
 
+    // Verifica se todas as palavras foram encontradas
     const allWordsFound = gameWords.every((word) => foundWords.includes(word));
 
     if (allWordsFound) {
@@ -123,8 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  
-
+  // Evento de envio do formulário
   $form.addEventListener("submit", function (event) {
     event.preventDefault();
     const valueSearch = $search.value;
