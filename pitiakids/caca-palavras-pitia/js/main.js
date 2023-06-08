@@ -93,15 +93,6 @@ const indexes = [
   ],
 ];
 
-// Obtém os índices correspondentes à palavra pesquisada
-function getIndex(name) {
-  const index = gameWords.indexOf(name);
-  if (index > -1) {
-    return indexes[index];
-  }
-  return [];
-}
-
 // Seleciona a célula na tabela
 function selectTd(line, column) {
   const tr = tbody.children[line];
@@ -110,11 +101,28 @@ function selectTd(line, column) {
   td.style.backgroundColor = "#00ff55";
 }
 
+// Remove a seleção da célula na tabela
+function deselectTd(line, column) {
+  const tr = tbody.children[line];
+  const td = tr.children[column];
+  td.classList.remove("highlight");
+  td.style.backgroundColor = "#d1fe41";
+}
+
 // Verifica se todas as palavras foram encontradas
 function checkAllWordsFound() {
   if (counter === gameWords.length) {
     popup.classList.add("active");
   }
+}
+
+// Obtém os índices correspondentes à palavra pesquisada
+function getIndex(name) {
+  const index = gameWords.indexOf(name);
+  if (index > -1) {
+    return indexes[index];
+  }
+  return [];
 }
 
 // Evento de envio do formulário
@@ -129,6 +137,30 @@ form.addEventListener("submit", function (event) {
     }
     counter++;
     checkAllWordsFound(); // Verifica se todas as palavras foram encontradas
+  }
+});
+
+// Evento de mouseover nas células da tabela
+tbody.addEventListener("mouseover", function (event) {
+  const td = event.target;
+  const lineIndex = Array.from(td.parentNode.children).indexOf(td);
+  const columnIndex = Array.from(td.parentNode.parentNode.children).indexOf(
+    td.parentNode
+  );
+  if (lineIndex >= 0 && columnIndex >= 0) {
+    selectTd(columnIndex, lineIndex);
+  }
+});
+
+// Evento de mouseout nas células da tabela
+tbody.addEventListener("mouseout", function (event) {
+  const td = event.target;
+  const lineIndex = Array.from(td.parentNode.children).indexOf(td);
+  const columnIndex = Array.from(td.parentNode.parentNode.children).indexOf(
+    td.parentNode
+  );
+  if (lineIndex >= 0 && columnIndex >= 0) {
+    deselectTd(columnIndex, lineIndex);
   }
 });
 

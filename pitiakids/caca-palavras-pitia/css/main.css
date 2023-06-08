@@ -144,6 +144,15 @@
   margin-bottom: 16px;
   }
 
+  #table .color {
+    background-color: #00ff55;
+    transition: background 1s ease-out;
+  }
+  
+  #table .color.highlight {
+    background-color: #f6ff00;
+  }
+  
 
 
   @media (max-width: 762px) and (min-width: 543px) {
