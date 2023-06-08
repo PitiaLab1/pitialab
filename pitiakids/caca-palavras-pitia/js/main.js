@@ -110,6 +110,13 @@ function selectTd(line, column) {
   td.style.backgroundColor = "#00ff55";
 }
 
+// Verifica se todas as palavras foram encontradas
+function checkAllWordsFound() {
+  if (counter === gameWords.length) {
+    popup.classList.add("active");
+  }
+}
+
 // Evento de envio do formulário
 form.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -121,9 +128,7 @@ form.addEventListener("submit", function (event) {
       selectTd(getIndexes[i][0], getIndexes[i][1]);
     }
     counter++;
-    if (counter === gameWords.length) {
-      popup.classList.add("active");
-    }
+    checkAllWordsFound(); // Verifica se todas as palavras foram encontradas
   }
 });
 
