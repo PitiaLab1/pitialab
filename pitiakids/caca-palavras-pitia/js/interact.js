@@ -1,87 +1,71 @@
-// Função para tratar o evento de mover o mouse sobre as células
-function handleMouseMove(event) {
-    const element = event.target;
-    const table = document.getElementById("table");
+// Função para verificar se a palavra está completa
+function checkWord(word, path) {
+    const wordArray = word.split("");
+    const pathArray = path.split(",");
   
-    if (element && element.tagName === "TD" && table.contains(element)) {
-      const form = document.getElementById("search");
-      const searchInput = form.querySelector("input[data-js='search']");
-      const tbody = table.querySelector("tbody[data-js='tbody']");
-      const cells = Array.from(tbody.querySelectorAll("td"));
+    if (wordArray.length !== pathArray.length) {
+      return false;
+    }
   
-      const startCell = cells.find(cell => cell.dataset.jsX === searchInput.dataset.jsStartX && cell.dataset.jsY === searchInput.dataset.jsStartY);
-      const endCell = element;
-  
-      const startX = parseInt(startCell.dataset.jsX);
-      const startY = parseInt(startCell.dataset.jsY);
-      const endX = parseInt(endCell.dataset.jsX);
-      const endY = parseInt(endCell.dataset.jsY);
-  
-      let path = "";
-  
-      if (startX === endX) {
-        const startYIndex = Math.min(startY, endY);
-        const endYIndex = Math.max(startY, endY);
-  
-        for (let yIndex = startYIndex; yIndex <= endYIndex; yIndex++) {
-          const cell = cells.find(cell => parseInt(cell.dataset.jsX) === startX && parseInt(cell.dataset.jsY) === yIndex);
-          path += cell.textContent.trim();
-          highlightCell(cell);
-        }
-      } else if (startY === endY) {
-        const startXIndex = Math.min(startX, endX);
-        const endXIndex = Math.max(startX, endX);
-  
-        for (let xIndex = startXIndex; xIndex <= endXIndex; xIndex++) {
-          const cell = cells.find(cell => parseInt(cell.dataset.jsX) === xIndex && parseInt(cell.dataset.jsY) === startY);
-          path += cell.textContent.trim();
-          highlightCell(cell);
-        }
-      } else if (Math.abs(startX - endX) === Math.abs(startY - endY)) {
-        const stepX = startX < endX ? 1 : -1;
-        const stepY = startY < endY ? 1 : -1;
-  
-        let xIndex = startX;
-        let yIndex = startY;
-  
-        while (xIndex !== endX && yIndex !== endY) {
-          const cell = cells.find(cell => parseInt(cell.dataset.jsX) === xIndex && parseInt(cell.dataset.jsY) === yIndex);
-          path += cell.textContent.trim();
-          highlightCell(cell);
-          xIndex += stepX;
-          yIndex += stepY;
-        }
-  
-        path += endCell.textContent.trim();
-        highlightCell(endCell);
-      }
-  
-      if (checkWord(searchInput.value, path)) {
-        console.log("Palavra encontrada:", searchInput.value);
+    for (let i = 0; i < wordArray.length; i++) {
+      if (wordArray[i] !== pathArray[i]) {
+        return false;
       }
     }
+  
+    return true;
   }
   
-  // Função para tratar o evento de clique do mouse nas células
-  function handleMouseClick(event) {
-    const element = event.target;
-    const table = document.getElementById("table");
+  // Função para adicionar a classe de destaque à célula
+  function highlightCell(element) {
+    element.classList.add("highlight");
+    element.style.backgroundColor = "#00ff55";
+  }
   
-    if (element && element.tagName === "TD" && table.contains(element)) {
+  // Função para remover a classe de destaque da célula
+  function unhighlightCell(element) {
+    element.classList.remove("highlight");
+    element.style.backgroundColor = "#d1fe41";
+  }
+  
+  // Função para tratar o evento de clique ou toque na célula
+  function handleCellEvent(event) {
+    const element = event.target;
+  
+    if (element && element.tagName === "TD") {
       const form = document.getElementById("search");
       const searchInput = form.querySelector("input[data-js='search']");
-      const tbody = table.querySelector("tbody[data-js='tbody']");
-      const cells = Array.from(tbody.querySelectorAll("td"));
+      const path = searchInput.dataset.jsPath || "";
   
-      cells.forEach(cell => unhighlightCell(cell));
+      if (path.includes(`${element.dataset.jsX},${element.dataset.jsY}`)) {
+        // Se a célula já estiver selecionada, remover da palavra em construção
+        const newPath = path.replace(`${element.dataset.jsX},${element.dataset.jsY},`, "");
+        searchInput.dataset.jsPath = newPath;
+        unhighlightCell(element);
+      } else {
+        // Adicionar a célula à palavra em construção
+        const newPath = `${path}${element.dataset.jsX},${element.dataset.jsY},`;
+        searchInput.dataset.jsPath = newPath;
+        highlightCell(element);
+      }
   
-      searchInput.value = "";
-      searchInput.dataset.jsStartX = "";
-      searchInput.dataset.jsStartY = "";
+      const word = searchInput.value.trim().toLowerCase();
+      const constructedPath = searchInput.dataset.jsPath.slice(0, -1);
+      const pathArray = constructedPath.split(",");
+      const table = document.getElementById("table");
+      const cells = Array.from(table.querySelectorAll("td"));
   
-      element.classList.add("highlight");
-      searchInput.dataset.jsStartX = element.dataset.jsX;
-      searchInput.dataset.jsStartY = element.dataset.jsY;
+      cells.forEach(cell => {
+        if (pathArray.includes(`${cell.dataset.jsX},${cell.dataset.jsY}`)) {
+          highlightCell(cell);
+        } else {
+          unhighlightCell(cell);
+        }
+      });
+  
+      if (checkWord(word, constructedPath)) {
+        console.log("Palavra encontrada:", word);
+      }
     }
   }
   
@@ -89,12 +73,12 @@ function handleMouseMove(event) {
   function initializeGame() {
     const form = document.getElementById("search");
     const searchInput = form.querySelector("input[data-js='search']");
-    const tbody = document.querySelector("tbody[data-js='tbody']");
-    const cells = Array.from(tbody.querySelectorAll("td"));
+    const table = document.getElementById("table");
+    const cells = Array.from(table.querySelectorAll("td"));
   
     cells.forEach(cell => {
-      cell.addEventListener("mousemove", handleMouseMove);
-      cell.addEventListener("click", handleMouseClick);
+      cell.addEventListener("click", handleCellEvent);
+      cell.addEventListener("touchstart", handleCellEvent);
     });
   
     searchInput.addEventListener("input", function(event) {
