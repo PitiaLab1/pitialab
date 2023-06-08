@@ -114,6 +114,7 @@ function selectTd(line, column) {
 form.addEventListener("submit", function (event) {
   event.preventDefault();
   const valueSearch = search.value.toLowerCase();
+  search.value = ""; // Limpa o valor do input
   const getIndexes = getIndex(valueSearch);
   if (getIndexes.length > 0) {
     for (let i = 0; i < getIndexes.length; i++) {
