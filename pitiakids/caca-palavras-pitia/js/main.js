@@ -5,6 +5,7 @@ const message = document.querySelector('[data-js="message"]');
 const popup = document.getElementById("popup");
 const popupCloseButton = document.querySelector(".popup-btn");
 let counter = 0;
+let selectedCells = [];
 
 const gameWords = [
   "pitia",
@@ -93,78 +94,107 @@ const indexes = [
   ],
 ];
 
-// Seleciona a célula na tabela
-function selectTd(line, column) {
-  const tr = tbody.children[line];
-  const td = tr.children[column];
-  td.classList.add("highlight");
-  td.style.backgroundColor = "#00ff55";
-}
+const directions = [
+  [0, 1], // direita
+  [1, 0], // baixo
+  [1, 1], // diagonal baixo-direita
+  [-1, 1], // diagonal cima-direita
+];
 
-// Remove a seleção da célula na tabela
-function deselectTd(line, column) {
-  const tr = tbody.children[line];
-  const td = tr.children[column];
-  td.classList.remove("highlight");
-  td.style.backgroundColor = "#d1fe41";
-}
+// Função para verificar se a palavra está correta
+function checkWord() {
+  const word = search.value.toLowerCase();
 
-// Verifica se todas as palavras foram encontradas
-function checkAllWordsFound() {
-  if (counter === gameWords.length) {
-    popup.classList.add("active");
-  }
-}
-
-// Obtém os índices correspondentes à palavra pesquisada
-function getIndex(name) {
-  const index = gameWords.indexOf(name);
-  if (index > -1) {
-    return indexes[index];
-  }
-  return [];
-}
-
-// Evento de envio do formulário
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
-  const valueSearch = search.value.toLowerCase();
-  search.value = ""; // Limpa o valor do input
-  const getIndexes = getIndex(valueSearch);
-  if (getIndexes.length > 0) {
-    for (let i = 0; i < getIndexes.length; i++) {
-      selectTd(getIndexes[i][0], getIndexes[i][1]);
-    }
+  if (gameWords.includes(word)) {
+    message.textContent = `Palavra encontrada: ${word}`;
+    message.classList.remove("error");
+    message.classList.add("success");
     counter++;
-    checkAllWordsFound(); // Verifica se todas as palavras foram encontradas
+    if (counter === gameWords.length) {
+      popup.classList.add("active");
+    }
+  } else {
+    message.textContent = "Palavra não encontrada";
+    message.classList.remove("success");
+    message.classList.add("error");
   }
+}
+
+// Função para limpar a seleção de células
+function clearSelection() {
+  selectedCells.forEach((cell) => {
+    cell.classList.remove("selected");
+  });
+  selectedCells = [];
+}
+
+// Função para selecionar células arrastadas
+function selectCells(startCell, endCell) {
+  const startRowIndex = parseInt(startCell.parentElement.getAttribute("data-index"));
+  const startCellIndex = parseInt(startCell.getAttribute("data-index"));
+  const endRowIndex = parseInt(endCell.parentElement.getAttribute("data-index"));
+  const endCellIndex = parseInt(endCell.getAttribute("data-index"));
+
+  const direction = [
+    Math.sign(endRowIndex - startRowIndex),
+    Math.sign(endCellIndex - startCellIndex),
+  ];
+
+  let rowIndex = startRowIndex;
+  let cellIndex = startCellIndex;
+  let currentCell = lines[rowIndex].children[cellIndex];
+
+  while (currentCell && currentCell !== endCell) {
+    selectedCells.push(currentCell);
+    currentCell.classList.add("selected");
+    rowIndex += direction[0];
+    cellIndex += direction[1];
+    currentCell = lines[rowIndex].children[cellIndex];
+  }
+
+  selectedCells.push(currentCell);
+  currentCell.classList.add("selected");
+}
+
+// Função para lidar com o evento de arrastar o dedo sobre as células
+function handleCellDrag(event) {
+  const cell = event.target;
+
+  if (cell.tagName === "TD") {
+    if (!selectedCells.length || selectedCells.includes(cell)) {
+      selectedCells.push(cell);
+      cell.classList.add("selected");
+    } else {
+      clearSelection();
+      selectedCells.push(cell);
+      cell.classList.add("selected");
+    }
+  }
+}
+
+// Função para lidar com o evento de soltar o dedo
+function handleCellDrop(event) {
+  const cell = event.target;
+
+  if (cell.tagName === "TD") {
+    if (selectedCells.length > 1 && selectedCells.includes(cell)) {
+      const startCell = selectedCells[0];
+      const endCell = selectedCells[selectedCells.length - 1];
+
+      selectCells(startCell, endCell);
+      checkWord();
+    } else {
+      clearSelection();
+    }
+  }
+}
+
+// Adiciona os ouvintes de eventos de arrastar e soltar às células
+lines.forEach((line) => {
+  line.addEventListener("mousedown", handleCellDrag);
+  line.addEventListener("mouseover", handleCellDrag);
+  line.addEventListener("mouseup", handleCellDrop);
 });
 
-// Evento de mouseover nas células da tabela
-tbody.addEventListener("mouseover", function (event) {
-  const td = event.target;
-  const lineIndex = Array.from(td.parentNode.children).indexOf(td);
-  const columnIndex = Array.from(td.parentNode.parentNode.children).indexOf(
-    td.parentNode
-  );
-  if (lineIndex >= 0 && columnIndex >= 0) {
-    selectTd(columnIndex, lineIndex);
-  }
-});
-
-// Evento de mouseout nas células da tabela
-tbody.addEventListener("mouseout", function (event) {
-  const td = event.target;
-  const lineIndex = Array.from(td.parentNode.children).indexOf(td);
-  const columnIndex = Array.from(td.parentNode.parentNode.children).indexOf(
-    td.parentNode
-  );
-  if (lineIndex >= 0 && columnIndex >= 0) {
-    deselectTd(columnIndex, lineIndex);
-  }
-});
-
-// Evento de clique no botão "Fechar" do popup
-popupCloseButton.addEventListener("click", function () {
-  popup.classList.remove("active");
-});
+// Adiciona o ouvinte de evento de clique ao botão de busca
+searchBtn.addEventListener("click", checkWord);
