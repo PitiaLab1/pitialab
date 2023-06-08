@@ -2,7 +2,8 @@ const form = document.querySelector('[data-js="form"]');
 const search = document.querySelector('[data-js="search"]');
 const tbody = document.querySelector('[data-js="tbody"]');
 const message = document.querySelector('[data-js="message"]');
-const newGameButton = document.querySelector('[data-js="new-game-button"]');
+const popup = document.getElementById("popup");
+const popupCloseButton = document.querySelector(".popup-btn");
 let counter = 0;
 
 const gameWords = [
@@ -98,50 +99,34 @@ function getIndex(name) {
   if (index > -1) {
     return indexes[index];
   }
-
-  search.value = "";
-  return false;
+  return [];
 }
 
 // Seleciona a célula na tabela
 function selectTd(line, column) {
   const tr = tbody.children[line];
   const td = tr.children[column];
-  td.classList.add("color");
+  td.classList.add("highlight");
   td.style.backgroundColor = "#00ff55";
-  search.value = "";
-
-  // Obtém as palavras encontradas até o momento
-  const foundWords = Array.from(tbody.querySelectorAll(".color")).map(
-    (td) => td.innerText
-  );
-
-  // Verifica se todas as palavras foram encontradas
-  const allWordsFound = gameWords.every((word) => foundWords.includes(word));
-
-  if (allWordsFound) {
-    document.getElementById("popup").classList.add("active");
-    document.getElementById("popup").addEventListener("click", () => {
-      document.getElementById("popup").classList.remove("active");
-    });
-  }
 }
 
 // Evento de envio do formulário
 form.addEventListener("submit", function (event) {
   event.preventDefault();
-  const valueSearch = search.value;
+  const valueSearch = search.value.toLowerCase();
   const getIndexes = getIndex(valueSearch);
-  if (getIndexes) {
+  if (getIndexes.length > 0) {
     for (let i = 0; i < getIndexes.length; i++) {
       selectTd(getIndexes[i][0], getIndexes[i][1]);
     }
     counter++;
-    if (counter === 6) {
-      document.getElementById("popup").classList.add("active");
-      document.getElementById("popup").addEventListener("click", () => {
-        document.getElementById("popup").classList.remove("active");
-      });
+    if (counter === gameWords.length) {
+      popup.classList.add("active");
     }
   }
+});
+
+// Evento de clique no botão "Fechar" do popup
+popupCloseButton.addEventListener("click", function () {
+  popup.classList.remove("active");
 });
