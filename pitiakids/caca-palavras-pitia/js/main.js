@@ -124,6 +124,9 @@ form.addEventListener("submit", function (event) {
       popup.classList.add("active");
     }
   }
+
+  // Limpa o campo de input
+  search.value = "";
 });
 
 // Evento de clique no botão "Fechar" do popup

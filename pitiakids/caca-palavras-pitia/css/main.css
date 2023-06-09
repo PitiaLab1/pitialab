@@ -42,10 +42,10 @@
   }
 
   #search input {
-  width: 500px;
-  height: 60px;
+  width: 600px;
+  height: 70px;
   color: #e25c5c;
-  font-size: 23px;
+  font-size: 27px;
   font-family: "Roboto";
   font-weight: bold;
   text-align: center;
@@ -53,7 +53,6 @@
   background-color: #ffffff;
   border-radius: 10px;
   outline: none;
-  letter-spacing: 1.5px;
     caret-color: black ;
 }
   #search input:focus{
@@ -61,18 +60,12 @@
   transition: all .2s linear;
   border: solid 2px #417505;
   }
-  #search input::placeholder{
-    font-family: sans-serif;
-    font-size: 14px;
-    margin-right: 240px;
-    color: #000000;
-    opacity: .3;
-  }
+ 
   #search button {
   background: linear-gradient(180deg, #d1fe41 -50%, #417505 100%);
   border-radius: 5px;
   width: 86px;
-  height: 60px;
+  height: 70px;
   border: none;
   color: #fff;
   cursor: pointer;
@@ -87,24 +80,25 @@
 }
 
   #table {
-  width: 610px;
-  height: 550px;
+  width: 710px;
+  height: 650px;
   margin: auto;
   border: 1px solid #000000;
   border-radius: 10px;
   border-spacing: 0;
+  font-family: sans-serif ;
   }
 
   #table td {
   border: 1.5px solid #000000;
-  width: 40px;
+  width: 50px;
   text-align: center;
   text-transform: uppercase;
-  font-family: "Roboto";
+  font-family: "Roboto" ;
   font-style: normal;
   font-weight: normal;
   line-height: 36px;
-  font-size: 36px;
+  font-size: 39px;
   letter-spacing: 2.9px;
   background-color: #d1fe41;
   
