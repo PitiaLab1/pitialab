@@ -8,6 +8,9 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+body{
+    overflow: hidden;
+}
 
 section {
     position: relative;
@@ -26,7 +29,6 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -207,15 +209,19 @@ a {
         overflow: hidden;
         max-height: 100vh;
     }
+    .content{
+        margin: 0;
+    }
 
     header ul li a {
         margin-left: 10px;
     }
+   
 
     .content .textBox {
         transform: translateY(135px);
         text-align: center;
-        z-index: 1;
+        z-index: 1; 
     }
 
     .content .textBox h2 {
@@ -355,7 +361,6 @@ a {
         top: 0;
         left: 0;
         width: 100%;
-        padding: 5px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -364,6 +369,7 @@ a {
     .logo-wrapper {
         display: flex;
         align-items: center;
+        padding: 0;
     }
     
     .logo {
