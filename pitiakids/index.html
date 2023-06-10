@@ -35,12 +35,12 @@
         </div>
         <ul class="thumb">
             <li><img src="images/thumb1.png" onclick="imgSlider('images/img1.png');changeColor('#adcb40')"></li>
-            <li><img src="images/thumb2.png" onclick="imgSlider('images/img2.png');changeColor('#eb7495')"></li>
-            <li><img src="images/thumb3.png" onclick="imgSlider('images/img3.png');changeColor('#d752b1')"></li>
+            <li><img src="images/thumb2.png" onclick="imgSlider('images/img2.png');changeColor('#d852b1')"></li>
+            <li><img src="images/thumb3.png" onclick="imgSlider('images/img3.png');changeColor('#cf3f85')"></li>
         </ul>
         <ul class="sci">
             <li><a target="_blank" href="https://www.facebook.com/profile.php?id=100092174707329"><img src="images/facebook.png"></a></li>
-            <li><a target="_blank" href="https://www.instagram.com/pitia.lab/"><img src="images/instagram.png"></a></li>
+            <li><a target="_blank" href="https://www.instagram.com/pitia.lab/"><img src="images/instagram.png" class="insta"></a></li>
         </ul>
 
         <script type="text/javascript">
@@ -53,13 +53,12 @@
                 const pitiaKids = document.querySelector('#pitiaKids');
                 const buttons = document.querySelectorAll('.button');
                 const title = document.querySelector('.title')  
-
                 circle.style.background = color;
                 pitiaKids.style.color = color;
                 buttons.forEach(function(button) {
                     button.style.background = color;});
                     title.style.color = color;
-            }
+                }
         </script>
     </section>
 </body>
